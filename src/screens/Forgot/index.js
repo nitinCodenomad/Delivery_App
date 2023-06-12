@@ -1,18 +1,26 @@
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 
-const ForgotPassword = () => {
+const ForgotPassword = ({ navigation }) => {
     const [hide, setHide] = useState(false)
     return (
         <View style={styles.mainView}>
+            <TouchableOpacity onPress={() => navigation.goBack()} >
+                <View style={{ height: 27, width: 27, borderRadius: 15, justifyContent: 'center', alignItems: 'center', elevation: 1, backgroundColor: "white", }}>
+                    <Image source={require('../../../assets/icons/back1.png')} style={styles.iconSize} />
+                </View>
+            </TouchableOpacity>
+            <Image source={require('../../../assets/icons/9118-removebg-preview.png')} style={{ height: 200, width: 200, alignSelf: "center", }} />
             <Text style={styles.forgotPWd}>
-                Forgot Password
+                FORGOT PASSWORD
             </Text>
-            <Text style={{ alignSelf: "center", fontSize: 20 }}>
+            <Text style={{ alignSelf: "center", fontSize: 16, fontWeight: "300", color: "black" }}>
                 Enter your mobile number
             </Text>
-            <Text style={{ alignSelf: "center", fontSize: 22 }}>
-                to search for your account
+            <Text style={{ alignSelf: "center", fontSize: 18, fontWeight: "300", color: 'black' }}>
+                to <Text style={{ color: "#F66754" }}>
+                    search
+                </Text> for your account
             </Text>
             <View style={{ flexDirection: "row", }}>
                 <View style={styles.countryCode} >
@@ -23,8 +31,8 @@ const ForgotPassword = () => {
                     <TextInput placeholder='Phone No.' style={styles.textField} />
                 </View>
             </View>
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.textButton}>LOG IN</Text>
+            <TouchableOpacity style={styles.button} onPress={() => Navigation.navigate('')}>
+                <Text style={styles.textButton}>Forgot Password?</Text>
             </TouchableOpacity>
         </View>
     )
@@ -33,13 +41,14 @@ export default ForgotPassword
 const styles = StyleSheet.create({
     forgotPWd: {
         alignSelf: "center",
-        opacity: 0.5,
-        fontSize: 16,
-        marginBottom: 15
+        // textDecorationLine: "underline",
+        fontSize: 12,
+        fontWeight: "300",
+        marginBottom: 6
     },
     mainView: {
         paddingHorizontal: 15,
-        // paddingVertical: 10,
+        paddingVertical: 10,
         marginBottom: 40,
     },
     divWithInput: {
@@ -70,12 +79,13 @@ const styles = StyleSheet.create({
     },
     textButton: {
         color: "white",
-        fontSize: 19,
+        fontSize: 20,
         fontWeight: "700",
     },
     iconSize: {
-        height: 23,
-        width: 23,
-        tintColor: "#F66754"
+        height: 13,
+        width: 13,
+        tintColor: "#F66754",
+        paddingRight:8
     },
 })

@@ -1,6 +1,7 @@
 import { Image, ScrollView, StyleSheet, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
-const Signup = () => {
+const Signup = ({ navigation }) => {
+    console.log(navigation)
     const [hide, setHide] = useState(false)
     return (
         <View style={styles.mainView}>
@@ -9,14 +10,13 @@ const Signup = () => {
                 {/* <TouchableOpacity>
                     <Image source={require('../../../assets/icons/back1.png')} style={styles.iconSize} />
                 </TouchableOpacity> */}
-                <Image source={require('../../../assets/images/3672341.jpg')} style={{ height: 350, width: 350, alignSelf: "center" }} />
-                {/* <Text style={{ ...styles.mainHeadings, marginTop: 15 }}>SIGN UP</Text> */}
+                <Image source={require('../../../assets/icons/9118-removebg-preview.png')} style={{ height: 200, width: 200, alignSelf: "center", }} />
                 <Text style={styles.welcome}>WELCOME</Text>
-                <Text style={{ alignSelf: "center", fontSize: 20 }}>
+                <Text style={{ alignSelf: "center", fontSize: 16, fontWeight: "300", color: "black" }}>
                     Get started with
                 </Text>
-                <Text style={{ alignSelf: "center", fontSize: 22 }}>
-                    your <Text style={{ color: "#F66754", }}> New </Text>
+                <Text style={{ alignSelf: "center", fontSize: 18, fontWeight: "300", color: 'black' }}>
+                    your <Text style={{ color: "#F66754", }}>New </Text>
                     account
                 </Text>
                 <View style={{ ...styles.divWithInput, }}>
@@ -34,7 +34,7 @@ const Signup = () => {
                         <TextInput placeholder='Phone No.' style={styles.textField} />
                     </View>
                 </View>
-                <View style={{ ...styles.divWithInput, flexDirection: "row", alignItems: "center" }}>
+                <View style={{ ...styles.divWithInput, flexDirection: "row", alignItems: "center", marginBottom: 10 }}>
                     <TextInput placeholder='Password' style={{ ...styles.textField, width: "89%" }} />
                     <TouchableOpacity onPress={() => setHide(!hide)}>
                         {hide ? <Image source={require('../../../assets/icons/openEye.png')} style={styles.iconSize} /> :
@@ -45,12 +45,15 @@ const Signup = () => {
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.textButton}> SIGN UP</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={{ marginBottom: 30 }}>
-                    <Text style={{ alignSelf: "center", marginTop: 15 }}>
+                <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center", marginTop: 15}}>
+                    <Text style={{ alignSelf: "center",fontWeight:'300',color:"black"}}>
                         Already have an account?
-                        <Text style={{ color: "#F66754", fontWeight: "700" }}> LOG IN </Text>
                     </Text>
-                </TouchableOpacity>
+                    <TouchableOpacity  onPress={() => navigation.navigate('Login')}>
+                        <Text style={{ color: "#F66754", fontWeight: "700" }}> LOG IN </Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{height:50}}/>
             </ScrollView>
         </View >
 
@@ -65,9 +68,10 @@ const styles = StyleSheet.create({
     },
     welcome: {
         alignSelf: "center",
-        opacity: 0.5,
-        fontSize: 16,
-        marginBottom: 15
+        fontWeight: "300",
+        // textDecorationLine: "underline",
+        fontSize: 12,
+        marginBottom: 6
     },
     mainHeadings: {
         alignSelf: "flex-start",
@@ -109,7 +113,7 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: "#F66754",
-        marginTop: 5,
+        marginTop: 10,
         height: 49,
         width: "100%",
         justifyContent: "center",

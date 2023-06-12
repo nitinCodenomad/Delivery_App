@@ -1,25 +1,24 @@
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image, TextInput } from 'react-native'
 import React, { useState } from 'react'
 
-const Login = () => {
+const Login = ({ navigation }) => {
     const [hide, setHide] = useState(false)
     return (
         <View style={styles.mainView}>
             <ScrollView
                 showsVerticalScrollIndicator={false}>
-                {/* <TouchableOpacity>
-                    <Image source={require('../../../assets/icons/back1.png')} style={styles.iconSize} />
-                </TouchableOpacity> */}
-                <Image source={require('../../../assets/images/3672341.jpg')} style={{ height: 350, width: 350, alignSelf: "center" }} />
-                {/* <Text style={{ ...styles.mainHeadings, marginTop: 15 }}>SIGN UP</Text> */}
-                <Text style={styles.welcome}>WELCOME</Text>
-                <Text style={{ alignSelf: "center", fontSize: 20 }}>
-                    Get started with
+
+                <Image source={require('../../../assets/icons/9118-removebg-preview.png')} style={{ height: 200, width: 200, alignSelf: "center", }} />
+                <Text style={styles.welcome}>WELCOME BACK</Text>
+                <Text style={{ alignSelf: "center", fontSize: 16, color: "black", fontWeight: "300" }}>
+                    Login in to
                 </Text>
-                <Text style={{ alignSelf: "center", fontSize: 22 }}>
-                    your <Text style={{ color: "#F66754", }}> New </Text>
-                    account
+                <Text style={{ alignSelf: "center", fontSize: 18, color: "black", fontWeight: "300", color: "#F66754" }}>
+                    your <Text style={{ color: "black" }}>
+                        account
+                    </Text>
                 </Text>
+
                 <View style={{ flexDirection: "row", }}>
                     <View style={styles.countryCode} >
                         <Text>+91(IN)</Text>
@@ -36,20 +35,23 @@ const Login = () => {
                             <Image source={require('../../../assets/icons/closeEye.png')} style={styles.iconSize} />}
                     </TouchableOpacity>
                 </View>
+                <TouchableOpacity style={{ alignSelf: 'flex-end', marginTop: 2 }} onPress={() => navigation.navigate('ForgotPassword')}>
+                    <Text style={styles.forgot}>
+                        Forgot Password ?
+                    </Text>
+                </TouchableOpacity>
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.textButton}>LOG IN</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={{ alignSelf: "center", marginTop: 15 }}>
-                        Don't have an account?
-                        <Text style={{ color: "#F66754", fontWeight: "700" }}> SIGN UP</Text>
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={{ marginBottom: 30 }}>
-                    <Text style={styles.forgot}>
-                        Forgot Password
-                    </Text>
-                </TouchableOpacity>
+                <View style={{ justifyContent: 'center', alignItems: "center", flexDirection: "row", marginTop: 15 }}>
+                    <Text style={{ alignSelf: "center",fontWeight:'300',color:"black" }}>
+                        Don't have an account?</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+                        <Text style={{ color: "#F66754", fontWeight: "800" }}> SIGN UP</Text>
+                    </TouchableOpacity>
+                </View>
+
+
             </ScrollView>
         </View>
     )
@@ -64,9 +66,10 @@ const styles = StyleSheet.create({
     },
     welcome: {
         alignSelf: "center",
-        opacity: 0.5,
-        fontSize: 16,
-        marginBottom: 15
+        // textDecorationLine: "underline",
+        fontSize: 12,
+        // fontWeight: "300",
+        marginBottom: 6
     },
     iconSize: {
         height: 23,
@@ -112,6 +115,7 @@ const styles = StyleSheet.create({
         color: "#F66754",
         fontWeight: "700",
         alignSelf: "center",
-        marginTop: 10
+        marginTop: 10,
+        marginBottom: 10
     }
 })
