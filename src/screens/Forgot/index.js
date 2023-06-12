@@ -1,8 +1,7 @@
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, Alert } from 'react-native'
 import React, { useState } from 'react'
 
 const ForgotPassword = ({ navigation }) => {
-    const [hide, setHide] = useState(false)
     return (
         <View style={styles.mainView}>
             <TouchableOpacity onPress={() => navigation.goBack()} >
@@ -31,7 +30,7 @@ const ForgotPassword = ({ navigation }) => {
                     <TextInput placeholder='Phone No.' style={styles.textField} />
                 </View>
             </View>
-            <TouchableOpacity style={styles.button} onPress={() => Navigation.navigate('')}>
+            <TouchableOpacity style={styles.button} onPress={() => { Alert.alert('') }}>
                 <Text style={styles.textButton}>Forgot Password?</Text>
             </TouchableOpacity>
         </View>
@@ -86,6 +85,6 @@ const styles = StyleSheet.create({
         height: 13,
         width: 13,
         tintColor: "#F66754",
-        paddingRight:8
+        paddingRight: 8
     },
 })
