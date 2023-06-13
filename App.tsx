@@ -1,15 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import SignUp from './src/screens/Signup'
-import Login from './src/screens/Login'
-import ForgotPassword from './src/screens/Forgot'
+import { Text, View } from 'react-native'
+import Profile from './src/screens/Profile'
 import { NavigationContainer } from '@react-navigation/native'
-import Navigation from './src/Navigation'
+import Navigation from './src/Navigation/stack'
+import Order from './src/screens/YourOrder/Order'
 const App = () => {
   return (
-    <NavigationContainer>
-      <Navigation />
-    </NavigationContainer>
+    <View>
+      <Order />
+    </View>
   )
 }
 export default App
