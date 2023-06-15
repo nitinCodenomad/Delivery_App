@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, TouchableOpacity, FlatList, ScrollView } from 'react-native';
+import { Image, StyleSheet, Text, View, TouchableOpacity, FlatList, ScrollView, Pressable, Alert } from 'react-native';
 import Navigation from '../../Navigation/stack';
 const Index = ({ navigation }) => {
     const DATA = [
@@ -38,39 +38,62 @@ const Index = ({ navigation }) => {
             image: require('../../../assets/icons/exit.png')
         }
     ]
-    const renderItem = ({ item }) => (
-        <View style={styles.listItem}>
-            <View style={{ flexDirection: "row" }}>
-                <View style={styles.iconContainer}>
-                    <Image source={item.image} style={styles.foodOrderIcon} />
+    const renderItem = ({ item }) => {
+        const handlePress = () => {
+            if (item.name === 'Your Orders') {
+                navigation.navigate('Order');
+            } else if (item.name === 'Favorite Orders') {
+                navigation.navigate('FavoriteOrdersScreen');
+            } else if (item.name === 'Address Book') {
+                navigation.navigate('AddressBookScreen');
+            } else if (item.name === 'Food Ordering Help') {
+                navigation.navigate('HelpScreen');
+            }
+        };
+        const toUserInfo = () => {
+
+        }
+        return (
+            <View style={styles.listItem}>
+                <View style={{ flexDirection: 'row' }}>
+                    <View style={styles.iconContainer}>
+                        <Image source={item.image} style={styles.foodOrderIcon} />
+                    </View>
+                    <TouchableOpacity onPress={handlePress}>
+                        <Text style={styles.listText}>{item.name}</Text>
+                    </TouchableOpacity>
                 </View>
-                <TouchableOpacity>
-                    <Text style={styles.listText}>{item.name}</Text>
-                </TouchableOpacity>
+                <Image source={require('../../../assets/icons/next.png')} style={styles.foodOrderIcon} />
             </View>
-            <Image source={require('../../../assets/icons/next.png')} style={styles.foodOrderIcon} />
-        </View>
-    );
+        );
+    };
+
+
 
     return (
         <View style={styles.mainView}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.headerView}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
                         <View style={styles.iconContainer}>
                             <Image source={require('../../../assets/icons/back1.png')} style={styles.iconSize} />
                         </View>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.ViewWithProfileInfo}>
-                    <View>
-                        <Text style={styles.profileText}>Test User</Text>
-                        <Text style={{ ...styles.profileText, fontSize: 14 }}>testuser@gmail.com</Text>
-                    </View>
-                    <Image source={require('../../../assets/icons/images-removebg-preview.png')} style={styles.profileImage} />
+                    <TouchableOpacity onPress={() => navigation.navigate('UserInfo')}>
+                        <View>
+                            <Text style={styles.profileText}>Test User</Text>
+                            <Text style={{ ...styles.profileText, fontSize: 14 }}>testuser@gmail.com</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('UserInfo')}>
+                        <Image source={require('../../../assets/icons/images-removebg-preview.png')} style={styles.profileImage} />
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.mutipleIcons}>
                     <TouchableOpacity>
+
                         <View style={styles.bigIconsDiv}>
                             <Image source={require('../../../assets/icons/heart.png')} style={{ width: 28, height: 28, }} />
                             <Text style={styles.bigIconText}>Favorites</Text>

@@ -1,14 +1,13 @@
+import { View, Text } from 'react-native'
 import React from 'react'
-import { Text, View } from 'react-native'
-import Profile from './src/screens/Profile'
-import { NavigationContainer } from '@react-navigation/native'
-import Navigation from './src/Navigation/stack'
-import Order from './src/screens/YourOrder/Order'
+import SpecificMenu from './src/screens/SpecificMenu'
+
 const App = () => {
   return (
     <View>
-      <Order />
+      <SpecificMenu />
     </View>
   )
 }
+
 export default App
