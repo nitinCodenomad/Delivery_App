@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 const signupStyles = StyleSheet.create({
   mainView: {
     paddingHorizontal: 15,
+    paddingVertical:10
   },
   welcome: {
     alignSelf: "center",
