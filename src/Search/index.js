@@ -6,7 +6,6 @@ const Search = () => {
     return (
         <View>
             <CustomerSearch />
-            <Tabs />
         </View>
     )
 }

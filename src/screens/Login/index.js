@@ -41,7 +41,7 @@ const Login = ({ navigation }) => {
             Forgot Password ?
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={loginStyles.button} onPress={() => navigation.navigate('Profile')}>
+        <TouchableOpacity style={loginStyles.button} onPress={() => navigation.navigate('Home')}>
           <Text style={loginStyles.textButton}>LOG IN</Text>
         </TouchableOpacity>
         <View style={{ justifyContent: 'center', alignItems: "center", flexDirection: "row", marginTop: 15 }}>

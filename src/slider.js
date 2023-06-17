@@ -28,7 +28,7 @@ const Slider = () => {
                             {/* <Text style={{ color: 'black', fontSize: 11.3, fontWeight: "300" }}>Today's Special</Text> */}
                             <Text style={styles.text}>{item.description}</Text>
                         </View>
-                        <Text style={{ backgroundColor: 'black', color: "white", padding: 1.5, width: "20%", fontSize: 11, textAlign: "center", borderRadius: 5, position: "absolute", bottom: 17,left:17,fontWeight:"500"}}>
+                        <Text style={{ backgroundColor: 'black', color: "white", padding: 1.5, width: "20%", fontSize: 11, textAlign: "center", borderRadius: 5, position: "absolute", bottom: 17, left: 17, fontWeight: "500" }}>
                             Order now
                         </Text>
                         <ImageBackground source={require('./../assets/icons/9118-removebg-preview.png')} style={{ width: 220, height: 220, alignSelf: "flex-end", position: 'absolute', right: -20, bottom: -22 }} />
