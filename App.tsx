@@ -1,12 +1,13 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import SpecificMenu from './src/screens/SpecificMenu'
-
+import { NavigationContainer } from '@react-navigation/native';
+import Navigation from './src/Navigation/stack'
 const App = () => {
   return (
-    <View>
-      <SpecificMenu />
-    </View>
+    <NavigationContainer>
+      <Navigation />
+    </NavigationContainer>
   )
 }
+
 export default App

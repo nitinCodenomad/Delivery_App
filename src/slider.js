@@ -52,7 +52,7 @@ const Slider = () => {
 const styles = StyleSheet.create({
     container: {
         // flex: 1,
-        width: "100%",
+        width: "110%",
         // height: "50%",
         // alignSelf: "center",
         // backgroundColor: "white",

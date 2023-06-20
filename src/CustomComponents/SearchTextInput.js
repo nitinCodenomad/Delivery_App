@@ -19,13 +19,13 @@ export default CustomerSearch
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 15,
-        paddingVertical: 10,
+        // paddingVertical: 10,
     },
     searchContainer: {
         flexDirection: "row",
         alignItems: "center",
         borderRadius: 10,
-        elevation: 10,
+        elevation: 1,
         backgroundColor: "white",
         marginTop: 16
     },

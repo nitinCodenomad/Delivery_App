@@ -25,7 +25,7 @@ const Payment = () => {
             <View style={{ marginTop: 15, height: 30, justifyContent: 'center', }}>
                 <Text style={{ padding: 3, fontSize: 13, fontWeight: "300", color: "black" }}>Card Payment</Text>
             </View>
-            <View style={{ backgroundColor: "white", height: 60, alignItems: "center", flexDirection: "row", justifyContent: "space-between", elevation: 6, borderRadius: 12 }}>
+            <View style={{ backgroundColor: "white", height: 60, alignItems: "center", flexDirection: "row", justifyContent: "space-between", elevation: 1, }}>
                 <View style={{ flexDirection: "row" }}>
                     <Image source={require('../../../assets/icons/credit-card.png')} style={{ height: 20, width: 20, tintColor: "#F66754", marginLeft: 5 }} />
                     <Text style={{ fontWeight: "500", marginLeft: 10, fontSize: 15, color: "black" }}>Credit/Debit card</Text>
@@ -40,7 +40,7 @@ const Payment = () => {
             <View style={{ marginTop: 10, justifyContent: 'center', }}>
                 <Text style={{ padding: 3, fontSize: 13, fontWeight: "300", color: "black" }}>Payment Wallets</Text>
             </View>
-            <View style={{ backgroundColor: "white", padding: 10, elevation: 6, borderRadius: 10 }}>
+            <View style={{ backgroundColor: "white", padding: 10, elevation: 1, }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: 10 }}>
                     <View style={{ justifyContent: "center", alignItems: "center" }}>
                         <TouchableOpacity>
@@ -65,7 +65,7 @@ const Payment = () => {
             <View style={{ height: 30, justifyContent: 'center', }}>
                 <Text style={{ padding: 3, fontSize: 13, fontWeight: "300", color: "black", marginTop: 7 }}>UPI</Text>
             </View>
-            <View style={{ backgroundColor: "white", height: 60, alignItems: "center", flexDirection: "row", justifyContent: "space-between", elevation: 6, borderRadius: 10 }}>
+            <View style={{ backgroundColor: "white", height: 60, alignItems: "center", flexDirection: "row", justifyContent: "space-between", elevation: 1 }}>
                 <View style={{ flexDirection: "row" }}>
                     <Text style={{ fontWeight: "500", marginLeft: 10, fontSize: 15, color: "black" }}>Pay via upi</Text>
                 </View>
@@ -84,7 +84,7 @@ const Payment = () => {
                     <TextInput style={{ backgroundColor: "white", elevation: 10, borderRadius: 8, width: "85%", alignSelf: "center", height: 36 }} placeholder='Enter your Upi' />
                     <View style={{ flexDirection: "row", justifyContent: "space-around", alignItems: "center", marginTop: 15 }} >
                         <TouchableOpacity onPress={() => setVisible(!visible)}>
-                            <View style={{ backgroundColor: "#F66754", width: 120, height: 40, justifyContent: "center", alignItems: "center", borderRadius: 8,  }}>
+                            <View style={{ backgroundColor: "#F66754", width: 120, height: 40, justifyContent: "center", alignItems: "center", borderRadius: 8, }}>
                                 <Text style={{ color: 'white', fontSize: 15, fontWeight: "bold" }}>
                                     Done
                                 </Text>
@@ -96,7 +96,7 @@ const Payment = () => {
             <View style={{ height: 30, justifyContent: 'center', }}>
                 <Text style={{ padding: 3, fontSize: 13, fontWeight: "300", color: "black", marginTop: 7 }}>Cash</Text>
             </View>
-            <View style={{ backgroundColor: "white", elevation: 5, borderRadius: 12 }}>
+            <View style={{ backgroundColor: "white", elevation: 1, }}>
                 <View style={{ alignItems: "center", flexDirection: "row", justifyContent: "space-between", height: 80, borderRadius: 12 }}>
                     <Text style={{ fontWeight: "500", marginLeft: 10, fontSize: 15, color: "black" }}>
                         Cash On Delivery
@@ -148,7 +148,7 @@ const Payment = () => {
 export default Payment
 const styles = StyleSheet.create({
     mainView: {
-        paddingHorizontal: 15,
+        // paddingHorizontal: 15,
         paddingVertical: 10,
     },
     iconSize: {

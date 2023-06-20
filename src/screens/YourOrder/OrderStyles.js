@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 15,
-    paddingVertical: 10,
+    // paddingVertical: 10,
   },
   headerView: {
     flexDirection: 'row',
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     justifyContent: 'center',
     alignItems: 'center',
-    elevation: 1,
+    elevation: 0.1,
     backgroundColor: 'white',
   },
   iconSize: {
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 10,
-    elevation: 10,
+    elevation: 1,
     backgroundColor: "white",
     marginTop: 16
   },
@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   titleContainer: {
+    color: "black",
     flexDirection: 'row',
     marginBottom: 10,
     alignSelf: "flex-start"
@@ -64,9 +65,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     flexDirection: "row",
     height: 85,
-    borderRadius: 12,
+    // borderRadius: 12,
     width: "100%",
-    elevation: 10,
+    elevation: 1,
     justifyContent: 'space-between'
   },
   itemImageContainer: {
@@ -82,10 +83,11 @@ const styles = StyleSheet.create({
   },
   itemDetails: {
     alignSelf: "center",
-    marginLeft: 8
+    marginLeft: 5
   },
   itemName: {
     fontSize: 17,
+    color: 'black',
     fontWeight: "bold"
   },
   itemAddress: {

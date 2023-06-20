@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    elevation: 6,
+    elevation: ,
     borderRadius: 12,
   },
   paymentOption: {
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   paymentWalletsContainer: {
     backgroundColor: 'white',
     padding: 10,
-    elevation: 6,
+    elevation: 1,
     borderRadius: 10,
   },
   walletRow: {

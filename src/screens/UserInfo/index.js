@@ -58,11 +58,11 @@ const styles = StyleSheet.create({
         width: 75,
         height: 75,
         borderRadius: 60,
-        borderWidth: 0.3,
+        borderWidth: 1,
         borderColor: 'black',
         marginRight: 10,
         position: "absolute",
-        top: -25
+        top: -25,
         // bottom:10
     },
 })

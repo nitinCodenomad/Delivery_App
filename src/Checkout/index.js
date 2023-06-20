@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, ScrollView,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 const index = () => {
@@ -6,16 +6,16 @@ const index = () => {
         <ScrollView>
             <View style={styles.mainView}>
                 <ScrollView>
-                <View style={{ flexDirection: "row", alignItems: "center",marginBottom:15 }}>
-                <TouchableOpacity onPress={() => navigation.goBack()} >
-                    <View style={{ height: 27, width: 27, borderRadius: 15, justifyContent: 'center', alignItems: 'center', elevation: 1, backgroundColor: "white", marginRight: 10, }}>
-                        <Image source={require('../../assets/icons/back1.png')} style={styles.iconSize} />
+                    <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 15 }}>
+                        <TouchableOpacity onPress={() => navigation.goBack()} >
+                            <View style={{ height: 27, width: 27, borderRadius: 15, justifyContent: 'center', alignItems: 'center', elevation: 1, backgroundColor: "white", marginRight: 10, }}>
+                                <Image source={require('../../assets/icons/back1.png')} style={styles.iconSize} />
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Text style={{ fontSize: 13.5, textAlign: "center", fontWeight: "300", color: 'black' }}>Payment Screen</Text>
+                        </TouchableOpacity>
                     </View>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={{ fontSize: 13.5, textAlign: "center", fontWeight: "300", color: 'black' }}>Payment Screen</Text>
-                </TouchableOpacity>
-            </View>
                     <View style={{ ...styles.ViewWithItem, flexDirection: "row", marginTop: 0 }}>
                         <View style={styles.itemImageContainer}>
                             <Image source={require('../../assets/images/shop.jpeg')} style={styles.itemImage} />

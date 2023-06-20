@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, ImageBackground } from 'react-native'
 import React from 'react'
 const Data = [{
 
@@ -19,7 +19,7 @@ const SpecificMenu = () => {
                     <Image source={require('../../../assets/icons/search-interface-symbol.png')} style={{ ...styles.iconSize, width: 18, height: 18 }} />
                 </View>
                 <View style={styles.viewWithImage}>
-                    <Image source={require('../../../assets/images/shop.jpeg')} style={{ height: 250, width: 340, borderRadius: 15, alignSelf: "center", marginTop: 5 }} />
+                    <ImageBackground source={require('../../../assets/images/shop.jpeg')} style={{ height: 250, width: 340, borderRadius: 15, alignSelf: "center", marginTop: 5 }} />
                 </View>
                 <Text style={{ fontSize: 18, fontWeight: "800", marginTop: 10, color: "black" }}>
                     Recommended

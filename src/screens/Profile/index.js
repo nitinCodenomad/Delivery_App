@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, TouchableOpacity, FlatList, ScrollView, Pressable, Alert } from 'react-native';
 import Navigation from '../../Navigation/stack';
-const Index = ({ navigation }) => {
+const Profile = ({ navigation }) => {
     const DATA = [
         {
             name: 'Your Orders',
@@ -50,9 +50,7 @@ const Index = ({ navigation }) => {
                 navigation.navigate('HelpScreen');
             }
         };
-        const toUserInfo = () => {
 
-        }
         return (
             <View style={styles.listItem}>
                 <View style={{ flexDirection: 'row' }}>
@@ -67,8 +65,6 @@ const Index = ({ navigation }) => {
             </View>
         );
     };
-
-
 
     return (
         <View style={styles.mainView}>
@@ -93,13 +89,12 @@ const Index = ({ navigation }) => {
                 </View>
                 <View style={styles.mutipleIcons}>
                     <TouchableOpacity>
-
                         <View style={styles.bigIconsDiv}>
                             <Image source={require('../../../assets/icons/heart.png')} style={{ width: 28, height: 28, }} />
                             <Text style={styles.bigIconText}>Favorites</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('Payment')}>
                         <View style={styles.bigIconsDiv}>
                             <Image source={require('../../../assets/icons/credit-card.png')} style={{ width: 28, height: 28, }} />
                             <Text style={styles.bigIconText}>Payment</Text>
@@ -134,22 +129,25 @@ const Index = ({ navigation }) => {
                         style={{ marginTop: 12 }}
                     />
                 </View>
-                <View style={{ marginBottom: 18 }} />
+                <View style={{ height: 70 }} />
+
             </ScrollView>
         </View>
     );
 };
 
-export default Index;
+export default Profile;
 
 const styles = StyleSheet.create({
     mainView: {
-        paddingHorizontal: 15,
-        paddingVertical: 20,
+        backgroundColor:"#f1f5f9"
+        // paddingHorizontal: 15,
+        // marginTop: 15,
     },
     headerView: {
         flexDirection: 'row',
         alignItems: 'center',
+        marginTop: 15
     },
     iconContainer: {
         height: 30,
@@ -165,6 +163,7 @@ const styles = StyleSheet.create({
         paddingLeft: 4,
         paddingRight: 4,
         marginTop: 12,
+        backgroundColor: 'white',
         // paddingHorizontal: 10,
         borderRadius: 12,
         justifyContent: 'space-between'
@@ -175,13 +174,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         // backgroundColor: "black",
-        borderRadius: 12,
-        elevation: 5,
+        borderRadius: 5,
+        elevation: 0.1,
         backgroundColor: "white"
     },
     bigIconText: {
         fontWeight: "300",
-        fontSize: 14
+        fontSize: 14,
+        color: "black"
     },
     iconSize: {
         height: 13,
@@ -192,9 +192,9 @@ const styles = StyleSheet.create({
     ViewWithProfileInfo: {
         width: '98%',
         height: 100,
-        borderRadius: 15,
+        // borderRadius: 15,
         alignSelf: 'center',
-        elevation: 5,
+        elevation: 0.1,
         backgroundColor: 'white',
         marginTop: 12,
         flexDirection: 'row',
@@ -220,8 +220,8 @@ const styles = StyleSheet.create({
         width: '98%',
         alignSelf: 'center',
         marginTop: 12,
-        borderRadius: 15,
-        elevation: 5,
+        // borderRadius: 15,
+        elevation: 0.1,
         paddingVertical: 10,
     },
     listHeaderText: {
