@@ -6,8 +6,6 @@ const App = () => {
   return (
     <NavigationContainer>
       <Navigation />
-    </NavigationContainer>
-  )
+    </NavigationContainer>)
 }
-
 export default App

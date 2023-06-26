@@ -2,15 +2,22 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 15,
+    // paddingHorizontal: 15,
     // paddingVertical: 10,
+  },
+  mainView: {
+    width: "100%",
+    backgroundColor: 'white',
+    marginTop: 5,
+    justifyContent: "flex-end"
+
   },
   headerView: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   iconContainer: {
-    marginTop: 10,
+    // marginTop: 10,
     height: 30,
     width: 30,
     borderRadius: 15,
@@ -61,21 +68,15 @@ const styles = StyleSheet.create({
     paddingBottom: 20
   },
   ViewWithItem: {
-    marginBottom: 20,
-    backgroundColor: "white",
     flexDirection: "row",
-    height: 85,
-    // borderRadius: 12,
-    width: "100%",
-    elevation: 1,
     justifyContent: 'space-between'
   },
   itemImageContainer: {
-    flexDirection: "row"
+    flexDirection: "row",
   },
   itemImage: {
-    height: 70,
-    width: 110,
+    height: 80,
+    width: 80,
     borderRadius: 7,
     marginLeft: 7,
     alignSelf: "center",
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
   itemPriceContainer: {
     alignItems: 'center',
     justifyContent: "center",
-    marginRight: 8
+    marginLeft: 25
   },
   itemPrice: {
     color: "#F66754",
@@ -114,6 +115,23 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginTop: 10,
     fontSize: 12
+  },
+  button: {
+    backgroundColor: "white",
+    height: 40,
+    width: "100%",
+    alignSelf: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white",
+    elevation: 1
+    // borderRadius: 12,
+    // marginTop: 6
+  },
+  textButton: {
+    color: "black",
+    // fontSize: 19,
+    // fontWeight: "700",
   }
 });
 

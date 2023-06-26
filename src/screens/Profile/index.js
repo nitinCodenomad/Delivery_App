@@ -8,11 +8,11 @@ const Profile = ({ navigation }) => {
             image: require('../../../assets/icons/menu.png'),
         },
         {
-            name: 'Favorite Orders',
+            name: 'Offers',
             image: require('../../../assets/icons/heart.png'),
         },
         {
-            name: 'Address Book',
+            name: 'Manage Address',
             image: require('../../../assets/icons/home-address.png'),
         },
         {
@@ -21,18 +21,19 @@ const Profile = ({ navigation }) => {
         },
     ];
     const DATA1 = [
+        // {
+        //     name: "Choose language",
+        //     image: require('../../../assets/icons/translation.png')
+        // },
         {
-            name: "Choose language",
-            image: require('../../../assets/icons/translation.png')
+            name: "Send Feedback",
+            image: require('../../../assets/icons/reply-message.png')
         },
         {
             name: "About",
             image: require('../../../assets/icons/information.png')
         },
-        {
-            name: "Send Feedback",
-            image: require('../../../assets/icons/reply-message.png')
-        },
+
         {
             name: 'Logout',
             image: require('../../../assets/icons/exit.png')
@@ -42,15 +43,36 @@ const Profile = ({ navigation }) => {
         const handlePress = () => {
             if (item.name === 'Your Orders') {
                 navigation.navigate('Order');
-            } else if (item.name === 'Favorite Orders') {
-                navigation.navigate('FavoriteOrdersScreen');
-            } else if (item.name === 'Address Book') {
-                navigation.navigate('AddressBookScreen');
+            } else if (item.name === 'Offers') {
+                navigation.navigate('Offers');
+            } else if (item.name === 'Manage Address') {
+                navigation.navigate('Address')
             } else if (item.name === 'Food Ordering Help') {
                 navigation.navigate('HelpScreen');
             }
+            else if (item.name == "Send Feedback") {
+                navigation.navigate('Feedback');
+            }
+            else if (item.name == "Logout") {
+                Alert.alert(
+                    'Logout',
+                    'Are you sure you want to log out?',
+                    [
+                        {
+                            text: 'Yes',
+                            onPress: () => {
+                                navigation.navigate('Login')
+                            },
+                        },
+                        {
+                            text: 'No',
+                            style: 'cancel',
+                        }
+                    ],
+                    { cancelable: false }
+                );
+            }
         };
-
         return (
             <View style={styles.listItem}>
                 <View style={{ flexDirection: 'row' }}>
@@ -65,17 +87,9 @@ const Profile = ({ navigation }) => {
             </View>
         );
     };
-
     return (
         <View style={styles.mainView}>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={styles.headerView}>
-                    <TouchableOpacity onPress={() => navigation.goBack()}>
-                        <View style={styles.iconContainer}>
-                            <Image source={require('../../../assets/icons/back1.png')} style={styles.iconSize} />
-                        </View>
-                    </TouchableOpacity>
-                </View>
                 <View style={styles.ViewWithProfileInfo}>
                     <TouchableOpacity onPress={() => navigation.navigate('UserInfo')}>
                         <View>
@@ -140,9 +154,8 @@ export default Profile;
 
 const styles = StyleSheet.create({
     mainView: {
-        backgroundColor:"#f1f5f9"
-        // paddingHorizontal: 15,
-        // marginTop: 15,
+        backgroundColor: "#f1f5f9",
+        // paddingHorizontal: 7,
     },
     headerView: {
         flexDirection: 'row',
@@ -165,7 +178,7 @@ const styles = StyleSheet.create({
         marginTop: 12,
         backgroundColor: 'white',
         // paddingHorizontal: 10,
-        borderRadius: 12,
+        borderRadius: 15,
         justifyContent: 'space-between'
     },
     bigIconsDiv: {
@@ -192,11 +205,11 @@ const styles = StyleSheet.create({
     ViewWithProfileInfo: {
         width: '98%',
         height: 100,
-        // borderRadius: 15,
+        borderRadius: 15,
         alignSelf: 'center',
         elevation: 0.1,
         backgroundColor: 'white',
-        marginTop: 12,
+        // marginTop: 12,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -220,7 +233,7 @@ const styles = StyleSheet.create({
         width: '98%',
         alignSelf: 'center',
         marginTop: 12,
-        // borderRadius: 15,
+        borderRadius: 15,
         elevation: 0.1,
         paddingVertical: 10,
     },

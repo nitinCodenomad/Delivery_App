@@ -15,23 +15,30 @@ import SpecificMenu from '../../screens/SpecificMenu';
 import Payment from '../../screens/Payment';
 import NavHeader from '../../CustomComponents/NavHeader';
 import Maps from '../../screens/Maps';
+import ManageAddress from '../../screens/ManageAddress';
+import Myoffers from '../../screens/Myoffers';
+import FeedBack from '../../screens/Feedback';
+import FoodOrderingHelp from '../../screens/FoodOrderingHelp';
 const Stack = createNativeStackNavigator();
 const Navigation = () => {
     return (
         <Stack.Navigator initialRouteName="Splash">
-            {/* <Stack.Screen name="Splash" component={Splash} options={{ headerShown: false }} /> */}
-            {/* <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }} /> */}
+            {/* <Stack.Screen name="Splash" component={Splash} options={{ headerShown: false }} />  */}
+            {/* <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }}     /> */}
             {/* <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} /> */}
-            <Stack.Screen name="Home" component={BottomTabs}
-                options={{ headerShown: false }} />
-            <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
-            <Stack.Screen name="Payment" component={Payment} options={{ headerShown: false }} />
-            <Stack.Screen name="Specificmenu" component={SpecificMenu} options={{ headerShown: false }} />
-            <Stack.Screen name="UserInfo" component={UserInfo} options={{ headerShown: false }} />
-            <Stack.Screen name="Maps" component={Maps} options={{ headerShown: false }} />
-            <Stack.Screen name="Specific" component={SpecificMenu} options={{ headerShown: false }} />
-            <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{ headerShown: false }} />
-            <Stack.Screen name="Order" component={Order} options={{ headerShown: false }} />
+            {/* <Stack.Screen name="Home" component={BottomTabs} options={{ headerShown: false }} /> */}
+            {/* <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} /> */}
+            {/* <Stack.Screen name="Payment" component={Payment} options={{ headerShown: false }} /> */}
+            {/* <Stack.Screen name="Specificmenu" component={SpecificMenu} options={{ headerShown: false }} /> */}
+            {/* <Stack.Screen name="UserInfo" component={UserInfo} options={{ headerShown: false }} /> */}
+            {/* <Stack.Screen name="FoodOrderingHelp" component={FoodOrderingHelp} options={{ headerShown: false }} /> */}
+            {/* <Stack.Screen name="Address" component={ManageAddress} options={{ header: () => <NavHeader isStack title="Manage Address" /> }} /> */}
+            {/* <Stack.Screen name="Offers" component={Myoffers} options={{ headerShown: false }} /> */}
+            <Stack.Screen name="Feedback" component={FeedBack} options={{ header: () => <NavHeader isStack title="Send Feedback" /> }} />
+            {/* <Stack.Screen name="Maps" component={Maps} options={{ headerShown: false }} /> */}
+            {/* <Stack.Screen name="Specific" component={SpecificMenu} options={{ headerShown: false }} /> */}
+            {/* <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{ headerShown: false }} /> */}
+            {/* <Stack.Screen name="Order" component={Order} options={{ headerShown: false }} /> */}
         </Stack.Navigator>
     );
 }

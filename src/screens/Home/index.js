@@ -4,8 +4,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import Slider from '../../slider'
 import HorizontalList from '../../horizontalList';
 import { Button } from 'react-native-elements';
-const Home = ({ navigation, props }) => {
-    console.log("=====> props", props?.route?.params)
+console.disableYellowBox = true
+const Home = ({ navigation }) => {
     const [hide, setHide] = useState(true)
     return (
         <View style={styles.mainView}>
@@ -52,7 +52,6 @@ const Home = ({ navigation, props }) => {
                                 </View>
                             </View>
                         </View>
-
                     </View>
                     <View style={styles.ViewWithItem}>
                         <View style={styles.itemImageContainer}>
@@ -131,17 +130,18 @@ const Home = ({ navigation, props }) => {
                                 </TouchableOpacity>
                             </View>
                             <View style={{ paddingVertical: 15, paddingHorizontal: 15 }}>
-                                <View style={{ flexDirection: 'row' }}>
-                                    <Image source={require('../../../assets/icons/home.png')} style={{ height: 20, width: 20 }} />
-                                    <View>
-                                        <Text style={{ fontSize: 16.5, color: "black", marginLeft: 5 }}>
+                                <View style={{ flexDirection: 'row', marginRight: 10, }}>
+                                    <Image source={require('../../../assets/icons/home.png')} style={{ height: 13, width: 13 }} />
+                                    <View style={{}}>
+                                        <Text style={{ fontSize: 16, color: "black", marginLeft: 5 }}>
                                             Home
                                         </Text>
-                                        <Text style={{ fontSize: 14 }}>
-                                            Location
-                                        </Text>
+
                                     </View>
                                 </View>
+                                <Text style={{ fontSize: 14 }}>
+                                    Location
+                                </Text>
                             </View>
                             <TouchableOpacity onPress={() => navigation.navigate('Maps')}>
                                 <View style={{ backgroundColor: "#F66754", width: "95%", height: 45, justifyContent: "center", borderRadius: 10, alignSelf: "center", marginTop: 40 }}>

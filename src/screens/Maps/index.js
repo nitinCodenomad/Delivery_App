@@ -30,6 +30,7 @@ const Maps = ({ navigation }) => {
     setLat(data?.lat);
     setLon(data?.lon);
   };
+
   return (
     <View style={{ flex: 1 }}>
       <MapView
@@ -43,15 +44,35 @@ const Maps = ({ navigation }) => {
         onPress={handleMapPress}
       >
         <Marker coordinate={{ latitude, longitude }} draggable={true}
-       />
+        />
       </MapView>
-      <TouchableOpacity onPress={() => navigation.navigate('Home', { data: { searchResult } })}>
+      {/* <BottomSheet
+        keyboardAware
+        bottomSheerColor="#FFFFFF"
+        ref="BottomSheet"
+        initialPosition={'50%'}
+        snapPoints={['50%', '100%']}
+        isBackDrop={true}
+        isBackDropDismissByPress={true}
+        isRoundBorderWithTipHeader={true}
+        header={
+          <View>
+            <Text style={styles.text}>Header</Text>
+          </View>
+        }
+        body={
+          <View style={styles.body}>
+            <Text style={styles.text}>Body</Text>
+          </View>
+        }
+      /> */}
+      {/* <TouchableOpacity onPress={() => navigation.navigate('Home', { data: { searchResult } })}>
         <View style={{ backgroundColor: "white", elevation: 10, height: 40, width: "100%", justifyContent: "center" }}>
           <Text style={{ color: "black" }}>
             {searchResult}
           </Text>
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   )
 }

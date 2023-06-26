@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { TextInput } from 'react-native'
 
 const Cart = ({ navigation }) => {
+    const [count, setCount] = useState(1)
     return (
         <View>
             <View style={styles.mainView}>
@@ -40,17 +41,21 @@ const Cart = ({ navigation }) => {
                             </Text>
                         </View>
                         <View style={{ flexDirection: "row", backgroundColor: '#D3D3D3', height: 25, borderRadius: 12, justifyContent: "center", alignItems: "center", paddingHorizontal: 1 }}>
-                            <View style={{ backgroundColor: "white", width: 20, height: 20, justifyContent: 'center', alignItems: 'center', borderRadius: 10, fontSize: 16, color: "black", }} >
-                                <Text style={{ color: "black", marginBottom: 2 }} >
-                                    -
-                                </Text>
-                            </View>
-                            <Text style={{ padding: 2, color: "black" }}> 2</Text>
-                            <View style={{ backgroundColor: "white", width: 20, height: 20, justifyContent: 'center', alignItems: 'center', borderRadius: 10, fontSize: 16, color: "black", marginLeft: 5 }} >
-                                <Text style={{ color: "#F66754", marginBottom: 2 }} >
-                                    +
-                                </Text>
-                            </View>
+                            <TouchableOpacity onPress={() => setCount(count - 1)}>
+                                <View style={{ backgroundColor: "white", width: 20, height: 20, justifyContent: 'center', alignItems: 'center', borderRadius: 10, fontSize: 16, color: "black", }} >
+                                    <Text style={{ color: "black", marginBottom: 2 }} >
+                                        -
+                                    </Text>
+                                </View>
+                            </TouchableOpacity>
+                            <Text style={{ padding: 2, color: "black" }}> {count}</Text>
+                            <TouchableOpacity onPress={() => setCount(count + 1)}>
+                                <View style={{ backgroundColor: "white", width: 20, height: 20, justifyContent: 'center', alignItems: 'center', borderRadius: 10, fontSize: 16, color: "black", marginLeft: 5 }} >
+                                    <Text style={{ color: "#F66754", marginBottom: 2 }} >
+                                        +
+                                    </Text>
+                                </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
                     <View style={{ backgroundColor: "white", flexDirection: "row", alignItems: "center", paddingHorizontal: 20, marginTop: 1.5 }}>
@@ -90,8 +95,6 @@ const Cart = ({ navigation }) => {
                         marginTop: 10,
                         paddingTop: 10,
                         backgroundColor: "white",
-                        // height: 120,
-                        // flexDirection: "row",
                         width: "99%",
                         alignSelf: "center",
                         elevation: 0.1,
@@ -148,8 +151,6 @@ export default Cart
 const styles = ({
     mainView: {
         backgroundColor: "#f1f5f9"
-        // paddingHorizontal: 10,
-        // paddingTop: 15
     },
     iconSize: {
         height: 13,
@@ -158,7 +159,6 @@ const styles = ({
         paddingRight: 8,
     },
     ViewWithItem: {
-        // marginBottom: 2,
         marginTop: 10,
         backgroundColor: "white",
         height: 130,

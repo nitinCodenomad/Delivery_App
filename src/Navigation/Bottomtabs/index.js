@@ -46,7 +46,7 @@ const BottomTabs = () => {
                         </View>
                     ),
                     tabBarShowLabel: false,
-                    header: (props) => <NavHeader  />,
+                    header: (props) => <NavHeader title='Home' Location="Location" isHome  />,
                 }}
             />
             <Tab.Screen name="Search" component={Search} options={{
