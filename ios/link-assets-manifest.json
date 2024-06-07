@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Gilroy-Bold.otf",
+      "sha1": "cc48618e85ee059e2018fe75f14996d0aca5663f"
+    },
+    {
+      "path": "assets/fonts/Gilroy-Medium.ttf",
+      "sha1": "d7f893124bd4fff78805e69df31385ae113368be"
+    },
+    {
+      "path": "assets/fonts/Gilroy-Regular.otf",
+      "sha1": "262b26f8d092f051036850f7149072fe6567b407"
+    },
+    {
+      "path": "assets/fonts/Gilroy-SemiBold.otf",
+      "sha1": "53f4b525f46858dc54466a40ba32f145986a6648"
+    }
+  ]
+}
